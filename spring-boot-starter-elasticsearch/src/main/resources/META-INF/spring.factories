@@ -1,0 +1,3 @@
+#org.springframework.context.ApplicationContextInitializer=cn.hycun.spring.config.DubboConfigurationApplicationContextInitializer
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.hycun.spring.config.ElasticAutoConfiguration
+#org.springframework.context.ApplicationListener=com.tutorial.config.DubboHolderListener
