@@ -4,8 +4,11 @@ import java.util.Date;
 
 public class TdzMarket {
     private String name;
+    private int imgId;
+    private String description;//描述
     private Double[] location;
     private Date addtime;
+
 
     public String getName() {
         return name;
@@ -13,6 +16,22 @@ public class TdzMarket {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getImgId() {
+        return imgId;
+    }
+
+    public void setImgId(int imgId) {
+        this.imgId = imgId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Double[] getLocation() {
