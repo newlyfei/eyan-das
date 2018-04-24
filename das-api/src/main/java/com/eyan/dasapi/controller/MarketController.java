@@ -32,11 +32,15 @@ public class MarketController {
 
     @ResponseBody
     @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public IndexResponse addPostion(@RequestParam String name,@RequestParam Double[] location) throws JsonProcessingException {
+    public IndexResponse addPostion(@RequestParam String name,
+                                    @RequestParam String description,
+                                    @RequestParam Double[] location) throws JsonProcessingException {
+
         mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
 
         TdzMarket tdzMarket=new TdzMarket();
         tdzMarket.setName(name);
+        tdzMarket.setDescription(description);
         tdzMarket.setAddtime(new Date());
 
 //        Double[] location={-73.983,40.719};
