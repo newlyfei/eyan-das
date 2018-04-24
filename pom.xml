@@ -19,6 +19,7 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<!-- 这里需要注意的是，早期版本可以通过pom的导入做父级的管理，2.0.0依然在父级pom中采用parent引入。 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
