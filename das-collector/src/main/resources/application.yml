@@ -1,17 +1,19 @@
+spring:
+  application:
+    name: das-collector
+server:
+  port: 8081
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-    healthcheck:  # 健康检查，否则Eureka会进入保护模式
-      enabled: true
-  instance:
-      lease-expiration-duration-in-seconds: 30
-      lease-renewal-interval-in-seconds: 10
-server:
-  port: 8762
-spring:
-  application:
-    name: das-collector
+#    healthcheck:  # 健康检查，否则Eureka会进入保护模式
+#      enabled: true
+#  instance:
+#      lease-expiration-duration-in-seconds: 30
+#      lease-renewal-interval-in-seconds: 10
+
+
 #  data:
 #    elasticsearch:
 #      cluster-name: elasticsearch

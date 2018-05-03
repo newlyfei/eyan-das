@@ -1,15 +1,21 @@
 # Elasticsearch索引
 
 #### 创建索引
-索引：tdz-market，索引类型：market
+索引：tdz_market，索引类型：market
 ```
-PUT /tdz-market
+PUT /tdz_market
 {
   "mappings": {
     "market": {
       "properties": {
         "name": {
           "type": "text"
+        },
+        "description": {
+           "type": "text"
+        },
+        "imgId": {
+            "type": "text"
         },
         "location": {
           "type":"geo_point"
@@ -25,5 +31,5 @@ PUT /tdz-market
 
 #### 查看索引
 ```
-GET /tdz-market/_mapping
+GET /tdz_market/_mapping
 ```

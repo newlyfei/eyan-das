@@ -6,7 +6,7 @@ public class TdzMarket {
     private String name;
     private int imgId;
     private String description;//描述
-    private Double[] location;
+    private Location location;
     private Date addtime;
 
 
@@ -34,11 +34,11 @@ public class TdzMarket {
         this.description = description;
     }
 
-    public Double[] getLocation() {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(Double[] location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 

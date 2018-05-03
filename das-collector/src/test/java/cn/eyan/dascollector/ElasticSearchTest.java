@@ -4,7 +4,7 @@ import cn.eyan.dascollector.demo.Article;
 import cn.eyan.dascollector.demo.ArticleSearchRepository;
 import cn.eyan.dascollector.demo.Author;
 import cn.eyan.dascollector.demo.Tutorial;
-import org.elasticsearch.index.query.QueryStringQueryBuilder;
+//import org.elasticsearch.index.query.QueryStringQueryBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ import java.util.Iterator;
 @SpringBootTest(classes = DasCollectorApplication.class)
 public class ElasticSearchTest {
 
-    @Autowired
-    private ArticleSearchRepository articleSearchRepository;
+//    @Autowired
+//    private ArticleSearchRepository articleSearchRepository;
     @Test
     public void testSaveArticleIndex(){
         Author author=new Author();
@@ -43,18 +43,18 @@ public class ElasticSearchTest {
         article.setPostTime(new Date());
         article.setClickCount(1L);
 
-        articleSearchRepository.save(article);
+//        articleSearchRepository.save(article);
     }
 
     @Test
     public void testSearch(){
-        String queryString="springboot";//搜索关键字
-        QueryStringQueryBuilder builder=new QueryStringQueryBuilder(queryString);
-        Iterable<Article> searchResult = articleSearchRepository.search(builder);
-        Iterator<Article> iterator = searchResult.iterator();
-        while(iterator.hasNext()){
-            System.out.println(iterator.next());
-        }
+//        String queryString="springboot";//搜索关键字
+//        QueryStringQueryBuilder builder=new QueryStringQueryBuilder(queryString);
+//        Iterable<Article> searchResult = articleSearchRepository.search(builder);
+//        Iterator<Article> iterator = searchResult.iterator();
+//        while(iterator.hasNext()){
+//            System.out.println(iterator.next());
+//        }
     }
 
 }
