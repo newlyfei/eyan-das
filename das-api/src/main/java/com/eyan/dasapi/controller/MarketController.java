@@ -15,6 +15,8 @@ import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +29,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RestController
 @RequestMapping("/market")
 public class MarketController {
+    private static Logger logger= LoggerFactory.getLogger(MarketController.class);
     @Autowired
     private TransportClient client;
 
@@ -94,12 +97,13 @@ public class MarketController {
     @ResponseBody
     @RequestMapping(value = "/distance/search")
     public List findDistanceInfo(@RequestParam Double lat, @RequestParam Double lon){
+        logger.info("request position info,lat={} lon={}",lat,lon);
         List result=new ArrayList();
         SearchRequestBuilder srb1 = client.prepareSearch(TEST_INDEX).setTypes(TEST_TYPE)
                 .setPostFilter(
                         QueryBuilders.geoDistanceQuery("location")
                                 .point(lat,lon)
-                                .distance(100, DistanceUnit.KILOMETERS)
+                                .distance(2, DistanceUnit.KILOMETERS)
 
                 );
 
